@@ -1,4 +1,3 @@
-
 // EXERCISE 5
 // Return an array of all bank account holders names
 // Array example: bankAccounts in /data/data.js
@@ -6,10 +5,21 @@
 
 export function getAllClientNames(array) {
   // Your code goes here...
-
+  let names = [];
+  for (const obj of Object.values(array)) {
+    names.push(obj.name);
+  }
+  return names;
+  // FIRST "successful" attempt result: Array ["Susan", "Morgan", "Joshua", "Candy", "Phil"] ---why considered incorrect?
+  // let names = [];
+  // for (const obj of Object.entries(array)) {
+  //   for (let item of Object.values(obj)) {
+  //     if (item.name) {
+  //       names.push(item.name);
+  //     }
+  //   }
+  // } return names;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-5"

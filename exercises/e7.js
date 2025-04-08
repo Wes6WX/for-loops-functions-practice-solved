@@ -6,7 +6,15 @@
 
 export function getClientWithLeastPositiveBalance(array) {
   // Your code goes here...
-  
+  let lowest = Infinity;
+  let named = [];
+  for (const obj of Object.values(array)) {
+    if (obj.balance < lowest && obj.balance > 0) {
+      lowest = obj.balance;
+      named = [obj];
+    }
+  }
+  return named;
 }
 
 // === TEST YOURSELF ===

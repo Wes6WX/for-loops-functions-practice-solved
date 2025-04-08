@@ -1,4 +1,3 @@
-
 // EXERCISE 14
 // The balance is supposed to equal the difference of all deposits and all withdrawals.
 // Check every bank account balance and return the array of bank accounts with a wrong balance
@@ -7,10 +6,34 @@
 
 export function getClientsWithWrongBalance(array) {
   // Your code goes here...
-
+  let incorrect = [];
+  let depSum = 0;
+  let witSum = 0;
+  for (const obj of Object.values(array)) {
+    if (obj.withdrawals) {
+      for (let dep of Object.values(obj.deposits)) {
+        depSum += dep;
+      }
+      for (let wit of Object.values(obj.withdrawals)) {
+        witSum += wit;
+      }
+      if (obj.balance !== depSum - witSum) {
+        incorrect.push(obj);
+      }
+      depSum = 0;
+      witSum = 0;
+    } else if (!obj.withdrawals && obj.deposits) {
+      for (let input of Object.values(obj.deposits)) {
+        depSum += input;
+      }
+      if (obj.balance !== depSum) {
+        incorrect.push(obj);
+      }
+      depSum = 0;
+    }
+  }
+  return incorrect;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-14"
