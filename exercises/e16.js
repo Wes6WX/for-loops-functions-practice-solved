@@ -7,9 +7,9 @@
 export function flatArrays(array) {
   // Your code goes here...
   let flattened = [];
-  for (const value of Object.values(array)) {
-    if (Object.values(value)) {
-      for (let deepValue of Object.values(value)) {
+  for (const value of array) {
+    if (value[0]) {
+      for (let deepValue of value) {
         flattened.push(deepValue);
       }
     } else {

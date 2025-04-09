@@ -7,7 +7,7 @@
 export function joinToString(array, separator) {
   let joined = "";
   let n = 1;
-  for (const i of Object.values(array)) {
+  for (let i of array) {
     if (n < array.length) {
       n++;
       joined += `${i}${separator}`;

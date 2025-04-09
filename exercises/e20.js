@@ -5,17 +5,21 @@
 // NOTE: You MUST use double/nested FOR loop to solve this exercise. The array.includes() method is NOT allowed.
 
 export function separateNamesWithAFromRest(array) {
-  // I noticed this only works when there's just 1 letter "a" in the name...otherwise produces duplicates! Perhaps there's a "numberOf" function that let's one if there's more than one duplicate letter, allowing one to "pop" the extras or something?
   let withA = [];
   let withoutA = [];
-  for (const value of Object.values(array)) {
-    withoutA.push(value);
-    for (let letter of Object.values(value)) {
+  let indicator = false;
+  for (let value of array) {
+    for (let letter of value) {
       if (letter === "a" || letter === "A") {
         withA.push(value);
-        withoutA.pop(value);
+        indicator = true;
+        break;
       }
     }
+    if (indicator === false) {
+      withoutA.push(value);
+    }
+    indicator = false;
   }
   return [withA, withoutA];
 }

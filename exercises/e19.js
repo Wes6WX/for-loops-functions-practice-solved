@@ -6,7 +6,7 @@
 export function reverseArray(array) {
   // Your code goes here...
   let backwards = [];
-  for (const [key, value] of Object.entries(array)) {
+  for (let key in array) {
     let n = array.length - key - 1;
     backwards.push(array[n]);
   }

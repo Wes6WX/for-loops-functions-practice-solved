@@ -7,7 +7,7 @@
 export function doesArrayInclude(array, value) {
   // Your code goes here...
   let indicator = false;
-  for (const v of Object.values(array)) {
+  for (let v of array) {
     if (v === value) {
       indicator = true;
     }

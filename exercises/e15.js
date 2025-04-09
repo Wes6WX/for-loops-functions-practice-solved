@@ -6,10 +6,10 @@
 export function concatArrays(arr1, arr2) {
   // Your code goes here...
   let fullArray = [];
-  for (const value of Object.values(arr1)) {
+  for (let value of arr1) {
     fullArray.push(value);
   }
-  for (const value of Object.values(arr2)) {
+  for (let value of arr2) {
     fullArray.push(value);
   }
   return fullArray;

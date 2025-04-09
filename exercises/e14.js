@@ -9,12 +9,12 @@ export function getClientsWithWrongBalance(array) {
   let incorrect = [];
   let depSum = 0;
   let witSum = 0;
-  for (const obj of Object.values(array)) {
+  for (let obj of array) {
     if (obj.withdrawals) {
-      for (let dep of Object.values(obj.deposits)) {
+      for (let dep of obj.deposits) {
         depSum += dep;
       }
-      for (let wit of Object.values(obj.withdrawals)) {
+      for (let wit of obj.withdrawals) {
         witSum += wit;
       }
       if (obj.balance !== depSum - witSum) {
@@ -23,7 +23,7 @@ export function getClientsWithWrongBalance(array) {
       depSum = 0;
       witSum = 0;
     } else if (!obj.withdrawals && obj.deposits) {
-      for (let input of Object.values(obj.deposits)) {
+      for (let input of obj.deposits) {
         depSum += input;
       }
       if (obj.balance !== depSum) {

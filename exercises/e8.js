@@ -5,12 +5,12 @@
 
 export function getClientWithGreatestBalance(array) {
   // Your code goes here...
-  let greatest = -Infinity;
+  let greatest = array[0].balance;
   let account = [];
-  for (const obj of Object.values(array)) {
-    if (obj.balance > greatest) {
-      greatest = obj.balance;
-      account = obj;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].balance > greatest) {
+      greatest = array[i].balance;
+      account = array[i];
     }
   }
   return [account];

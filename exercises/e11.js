@@ -8,9 +8,9 @@ export function getAllWithdrawals(array) {
   // Your code goes here...
   let sums = [];
   let sum = 0;
-  for (const obj of Object.values(array)) {
+  for (let obj of array) {
     if (obj.withdrawals) {
-      for (let value of Object.values(obj.withdrawals)) {
+      for (let value of obj.withdrawals) {
         sum += value;
       }
       sums.push(sum);

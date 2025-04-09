@@ -6,19 +6,10 @@
 export function getAllClientNames(array) {
   // Your code goes here...
   let names = [];
-  for (const obj of Object.values(array)) {
-    names.push(obj.name);
+  for (let user of array) {
+    names.push(user.name);
   }
   return names;
-  // FIRST "successful" attempt result: Array ["Susan", "Morgan", "Joshua", "Candy", "Phil"] ---why considered incorrect?
-  // let names = [];
-  // for (const obj of Object.entries(array)) {
-  //   for (let item of Object.values(obj)) {
-  //     if (item.name) {
-  //       names.push(item.name);
-  //     }
-  //   }
-  // } return names;
 }
 
 // === TEST YOURSELF ===

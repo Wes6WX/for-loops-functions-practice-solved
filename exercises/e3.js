@@ -10,11 +10,10 @@
 export function getAverage(array) {
   // Your code goes here...
   let sum = 0;
-  let amount = array.length;
-  for (const i of Object.values(array)) {
-    sum += i;
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
   }
-  return sum / amount;
+  return sum / array.length;
 }
 
 /**
@@ -27,9 +26,9 @@ export function getAverage(array) {
 export function getStringSum(str) {
   // Your code goes here...
   let sum = 0;
-  for (const i of Object.values(str)) {
-    if (Number(i)) {
-      sum += Number(i);
+  for (let i = 0; i < str.length; i++) {
+    if (Number(str[i])) {
+      sum += Number(str[i]);
     }
   }
   return sum;
